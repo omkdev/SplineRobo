@@ -1,27 +1,39 @@
-// Basic animation or interactivity
 document.addEventListener("DOMContentLoaded", () => {
   const viewer = document.getElementById("robot-viewer");
-  const btn = document.querySelector(".glow");
+  const activateButton = document.getElementById("activate-btn");
 
-  // Viewer hover messages
+  if (!viewer || !activateButton) {
+    return;
+  }
+
   viewer.addEventListener("mouseenter", () => {
-    console.log("Robot activated 🤖");
+    console.log("Robot activated");
   });
 
   viewer.addEventListener("mouseleave", () => {
-    console.log("Robot deactivated 💤");
+    console.log("Robot in standby");
   });
 
-  // Button click animation
-  btn.addEventListener("click", () => { 
-    btn.innerText = "Activating...";
-    btn.classList.add("active");
-    document.body.style.background = "radial-gradient(circle at 50% 50%, #001f3f, #000)";
+  activateButton.addEventListener("click", () => {
+    const originalLabel = "Activate Robot";
+
+    activateButton.textContent = "Activating...";
+    activateButton.disabled = true;
+
+    document.body.style.background =
+      "radial-gradient(circle at 50% 50%, #001f3f, #000)";
+
     setTimeout(() => {
-      btn.innerText = "Robot Activated 🤖";
-      btn.style.background = "#0f0";
-      btn.style.color = "#000";
-      btn.classList.remove("active");
-    }, 2000);
+      activateButton.textContent = "Robot Activated";
+      activateButton.style.background = "#8bff9e";
+      activateButton.style.color = "#03210f";
+    }, 1200);
+
+    setTimeout(() => {
+      activateButton.textContent = originalLabel;
+      activateButton.disabled = false;
+      activateButton.removeAttribute("style");
+      document.body.style.background = "";
+    }, 2600);
   });
 });

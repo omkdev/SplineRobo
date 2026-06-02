@@ -1,12 +1,12 @@
 # SplineRobo
 
-A web application showcasing SplineRobo features, information, and contact details.
+A single-page web application showcasing the SplineRobo home experience.
 
 ## Features
 
-- Home, About, Features, and Contact pages
+- Single home page layout
 - Responsive design
-- Organized assets and images
+- Clean and structured HTML/CSS/JS setup
 - Uses a Spline model for interactive 3D content
 
 ## Getting Started
@@ -17,4 +17,3 @@ Open `index.html` in your browser to view the site.
 
 - `index.html`, `style.css`, `script.js`: Main files
 - `assets/images/`: Image assets
-- `pages/`: Additional HTML pages
